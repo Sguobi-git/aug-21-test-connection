@@ -229,7 +229,8 @@ def abacus_status():
 @app.route('/api/orders/booth/<booth_number>', methods=['GET'])
 def get_orders_by_booth(booth_number):
     """Get orders for a specific booth number with smart caching"""
-    cache_key = f"booth_{booth_number}"
+    # cache_key = f"booth_{booth_number}"
+    cache_key = f"booth_{booth_number}_{SHEET_ID}"  # Include sheet ID in cache key
     force_refresh = request.args.get(FORCE_REFRESH_PARAM, 'false').lower() == 'true'
     
     # Try cache first (unless force refresh)
