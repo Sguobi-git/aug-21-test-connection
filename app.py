@@ -138,7 +138,8 @@ def get_mock_orders():
 
 def load_orders_from_sheets(force_refresh=False):
     """Load orders from Google Sheets with smart caching"""
-    cache_key = "all_orders"
+    # cache_key = "all_orders"
+    cache_key = f"all_orders_{SHEET_ID}"  # Include sheet ID in cache key
     
     # Check cache first (unless force refresh)
     if not force_refresh:
@@ -288,6 +289,10 @@ def clear_cache():
     CACHE = {}
     logger.info("🗑️ Cache cleared manually")
     return jsonify({'message': 'Cache cleared successfully'})
+
+
+
+
 
 if __name__ == '__main__':
     import os
