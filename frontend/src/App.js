@@ -136,7 +136,7 @@ function App() {
     });
   };
 
-  const API_BASE = 'https://test-expo-flow.onrender.com/api';
+  const API_BASE = 'https://aug-21-test-connection.onrender.com/';
 
   const fetchOrdersByBooth = async (boothNum, forceRefresh = false) => {
     setLoading(true);
